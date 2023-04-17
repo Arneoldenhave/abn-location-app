@@ -24,10 +24,4 @@ public extension UIView {
         return constraints
         
     }
-
-}
-
-
-public extension UIView {
-        
 }
