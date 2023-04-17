@@ -9,22 +9,9 @@ import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
-    var window: UIWindow?
+    
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
-        // Create a window and set its root view controller
-        window = UIWindow(frame: UIScreen.main.bounds)
-        let viewController = LocationViewController()
-        window?.rootViewController = viewController
-        window?.makeKeyAndVisible()
-        // Customize app appearance (optional)
-        UINavigationBar.appearance().tintColor = .white
-        UINavigationBar.appearance().barTintColor = .blue
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        
         return true
     }
 
@@ -45,3 +32,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
+

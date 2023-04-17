@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2519477629ED36150000714B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2519477529ED36150000714B /* AppDelegate.swift */; };
-		2519477829ED36150000714B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2519477729ED36150000714B /* SceneDelegate.swift */; };
 		2519477D29ED36150000714B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2519477B29ED36150000714B /* Main.storyboard */; };
 		2519477F29ED36160000714B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2519477E29ED36160000714B /* Assets.xcassets */; };
 		2519478229ED36160000714B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2519478029ED36160000714B /* LaunchScreen.storyboard */; };
@@ -28,6 +27,7 @@
 		251947FB29ED39EB0000714B /* LocationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251947FA29ED39EB0000714B /* LocationsController.swift */; };
 		251947FE29ED3A1B0000714B /* LocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251947FC29ED3A1B0000714B /* LocationsViewController.swift */; };
 		251947FF29ED3A1B0000714B /* LocationsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251947FD29ED3A1B0000714B /* LocationsListView.swift */; };
+		2519480129ED3BDF0000714B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2519480029ED3BDF0000714B /* SceneDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +50,6 @@
 /* Begin PBXFileReference section */
 		2519477229ED36150000714B /* Locations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Locations.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2519477529ED36150000714B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2519477729ED36150000714B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		2519477C29ED36150000714B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2519477E29ED36160000714B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2519478129ED36160000714B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -73,6 +72,7 @@
 		251947FA29ED39EB0000714B /* LocationsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationsController.swift; sourceTree = "<group>"; };
 		251947FC29ED3A1B0000714B /* LocationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationsViewController.swift; sourceTree = "<group>"; };
 		251947FD29ED3A1B0000714B /* LocationsListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationsListView.swift; sourceTree = "<group>"; };
+		2519480029ED3BDF0000714B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,7 +126,7 @@
 				251947EF29ED39370000714B /* Views */,
 				251947A529ED372F0000714B /* Modules */,
 				2519477529ED36150000714B /* AppDelegate.swift */,
-				2519477729ED36150000714B /* SceneDelegate.swift */,
+				2519480029ED3BDF0000714B /* SceneDelegate.swift */,
 				2519477B29ED36150000714B /* Main.storyboard */,
 				2519477E29ED36160000714B /* Assets.xcassets */,
 				2519478029ED36160000714B /* LaunchScreen.storyboard */,
@@ -379,6 +379,7 @@
 				251947ED29ED38FE0000714B /* UIVIew+Extensions.swift in Sources */,
 				251947EC29ED38FE0000714B /* Namespace.swift in Sources */,
 				251947FF29ED3A1B0000714B /* LocationsListView.swift in Sources */,
+				2519480129ED3BDF0000714B /* SceneDelegate.swift in Sources */,
 				251947EE29ED38FE0000714B /* UpdateableView.swift in Sources */,
 				251947F629ED399C0000714B /* Location.swift in Sources */,
 				251947EB29ED38FE0000714B /* TableViewCell.swift in Sources */,
@@ -386,7 +387,6 @@
 				2519477629ED36150000714B /* AppDelegate.swift in Sources */,
 				251947DC29ED38A20000714B /* GETRequest.swift in Sources */,
 				251947FE29ED3A1B0000714B /* LocationsViewController.swift in Sources */,
-				2519477829ED36150000714B /* SceneDelegate.swift in Sources */,
 				251947DE29ED38A20000714B /* APIService.swift in Sources */,
 				251947DD29ED38A20000714B /* APIError.swift in Sources */,
 			);

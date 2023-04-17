@@ -1,22 +1,27 @@
-//
-//  SceneDelegate.swift
-//  Locations
-//
-//  Created by Arne Oldenhave on 17/04/2023.
-//
-
 import UIKit
+
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        
+        // Create a UIWindowScene instance
+        guard let windowScene = scene as? UIWindowScene else { return }
+        
+        // Create a UIWindow with the given windowScene
+        let window = UIWindow(windowScene: windowScene)
+        
+        // Set the root view controller of the window
+        let rootViewController = LocationViewController() // Replace with the appropriate view controller for your app
+        window.rootViewController = rootViewController
+        
+        // Set the window as the app's main window
+        self.window = window
+        
+        // Make the window visible
+        window.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -38,7 +43,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func sceneWillEnterForeground(_ scene: UIScene) {
         // Called as the scene transitions from the background to the foreground.
-        // Use this method to undo the changes made on entering the background.
+        // Use this method to undo any changes made on entering the background.
     }
 
     func sceneDidEnterBackground(_ scene: UIScene) {
@@ -49,4 +54,3 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
 }
-
