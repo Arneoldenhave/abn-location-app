@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Create a window and set its root view controller
         window = UIWindow(frame: UIScreen.main.bounds)
-        let viewController = ViewController()
+        let viewController = LocationViewController()
         window?.rootViewController = viewController
         window?.makeKeyAndVisible()
         // Customize app appearance (optional)

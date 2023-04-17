@@ -33,7 +33,7 @@ public final class LocationViewController: UITableViewController {
     
     override public func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.backgroundColor = .white
+        self.tableView.backgroundColor = .red
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.register(CellType.self, forCellReuseIdentifier: Self.cellIdentifier)
