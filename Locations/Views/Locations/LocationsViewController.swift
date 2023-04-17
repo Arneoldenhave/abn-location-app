@@ -113,7 +113,7 @@ extension LocationViewController {
             assertionFailure("Could not form url from string: \(urlString)")
             return
         }
-        // returns false for some unknown reason, might have to do with running on simualtor
+        // returns false for some unknown reason, might have to do with running on simulator
 //        guard UIApplication.shared.canOpenURL(deepLinkURL) else {
 //            assertionFailure("Cannot open url: \(deepLinkURL)")
 //            return
