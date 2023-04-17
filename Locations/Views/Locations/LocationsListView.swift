@@ -10,6 +10,26 @@ import UIKit
 public final class LocationsListView: UIView {
     
     private let label: UILabel = .init()
+    private let stackView = UIStackView()
+    
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.commonInit()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+extension LocationsListView {
+    
+    func commonInit() {
+        self.wrap(stackView)
+        self.backgroundColor = .blue
+        stackView.axis = .horizontal
+        stackView.addArrangedSubview(label)
+    }
 }
 
 

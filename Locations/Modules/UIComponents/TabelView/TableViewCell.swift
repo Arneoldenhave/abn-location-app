@@ -13,10 +13,13 @@ extension UIComponents {
         
         public let view: View
     
+        let  l = UILabel()
+        
+        
          override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
              self.view = View()
              super.init(style: style, reuseIdentifier: reuseIdentifier)
-             view.centerIn(self)
+             contentView.wrap(view)
          }
 
          required init?(coder aDecoder: NSCoder) {

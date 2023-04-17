@@ -33,6 +33,13 @@ public final class LocationViewController: UITableViewController {
     
     override public func viewDidLoad() {
         super.viewDidLoad()
+        self.setup()
+    }
+}
+
+extension LocationViewController {
+    
+    func setup() {
         self.tableView.backgroundColor = .red
         self.tableView.delegate = self
         self.tableView.dataSource = self

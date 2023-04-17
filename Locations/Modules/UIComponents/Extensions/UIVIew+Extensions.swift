@@ -11,23 +11,23 @@ import UIKit
 public extension UIView {
     
     @discardableResult
-        public func centerIn(_ view: UIView, insets: UIEdgeInsets = .zero) -> [NSLayoutConstraint] {
-        self.translatesAutoresizingMaskIntoConstraints = false
+    func wrap(_ view: UIView,  insets: UIEdgeInsets = .zero) -> [NSLayoutConstraint] {
+        view.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(view)
         let constraints : [NSLayoutConstraint] = [
-            self.topAnchor.constraint(equalTo: view.topAnchor, constant: insets.top),
-            self.leadingAnchor.constraint(equalTo: view.leadingAnchor,  constant: insets.left),
-            self.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: insets.bottom),
-            self.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: insets.right)
+            view.topAnchor.constraint(equalTo: self.topAnchor, constant: insets.top),
+            view.leadingAnchor.constraint(equalTo: self.leadingAnchor,  constant: insets.left),
+            view.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: insets.bottom),
+            view.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: insets.right)
         ]
         NSLayoutConstraint.activate(constraints)
         return constraints
+        
     }
-    
+
 }
 
 
 public extension UIView {
-    
-    
+        
 }
