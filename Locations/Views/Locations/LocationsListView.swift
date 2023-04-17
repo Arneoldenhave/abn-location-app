@@ -1,0 +1,29 @@
+//
+//  LocationsListView.swift
+//  DeeplinkApp
+//
+//  Created by Arne Oldenhave on 16/04/2023.
+//
+
+import UIKit
+
+public final class LocationsListView: UIView {
+    
+    private let label: UILabel = .init()
+}
+
+
+extension LocationsListView: UpdateableView {
+    public func updateUI(with data: UpdateData) {
+        self.label.text = data.locationName
+    }
+    
+    public struct UpdateData {
+        let locationName: String?
+        
+        public init(from location: Location) {
+            self.locationName = location.name
+        }
+    }
+    
+}

@@ -25,6 +25,7 @@
 		251947EC29ED38FE0000714B /* Namespace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251947E629ED38FE0000714B /* Namespace.swift */; };
 		251947ED29ED38FE0000714B /* UIVIew+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251947E829ED38FE0000714B /* UIVIew+Extensions.swift */; };
 		251947EE29ED38FE0000714B /* UpdateableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251947EA29ED38FE0000714B /* UpdateableView.swift */; };
+		251947F629ED399C0000714B /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251947F229ED399C0000714B /* Location.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		251947E629ED38FE0000714B /* Namespace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Namespace.swift; sourceTree = "<group>"; };
 		251947E829ED38FE0000714B /* UIVIew+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIVIew+Extensions.swift"; sourceTree = "<group>"; };
 		251947EA29ED38FE0000714B /* UpdateableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateableView.swift; sourceTree = "<group>"; };
+		251947F229ED399C0000714B /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 		2519477429ED36150000714B /* Locations */ = {
 			isa = PBXGroup;
 			children = (
+				251947EF29ED39370000714B /* Views */,
 				251947A529ED372F0000714B /* Modules */,
 				2519477529ED36150000714B /* AppDelegate.swift */,
 				2519477729ED36150000714B /* SceneDelegate.swift */,
@@ -216,6 +219,22 @@
 				251947EA29ED38FE0000714B /* UpdateableView.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		251947EF29ED39370000714B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				251947F129ED399C0000714B /* Locations */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		251947F129ED399C0000714B /* Locations */ = {
+			isa = PBXGroup;
+			children = (
+				251947F229ED399C0000714B /* Location.swift */,
+			);
+			path = Locations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -355,6 +374,7 @@
 				251947ED29ED38FE0000714B /* UIVIew+Extensions.swift in Sources */,
 				251947EC29ED38FE0000714B /* Namespace.swift in Sources */,
 				251947EE29ED38FE0000714B /* UpdateableView.swift in Sources */,
+				251947F629ED399C0000714B /* Location.swift in Sources */,
 				251947EB29ED38FE0000714B /* TableViewCell.swift in Sources */,
 				2519477629ED36150000714B /* AppDelegate.swift in Sources */,
 				251947DC29ED38A20000714B /* GETRequest.swift in Sources */,
