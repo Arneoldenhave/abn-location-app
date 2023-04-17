@@ -26,6 +26,7 @@
 		251947ED29ED38FE0000714B /* UIVIew+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251947E829ED38FE0000714B /* UIVIew+Extensions.swift */; };
 		251947EE29ED38FE0000714B /* UpdateableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251947EA29ED38FE0000714B /* UpdateableView.swift */; };
 		251947F629ED399C0000714B /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251947F229ED399C0000714B /* Location.swift */; };
+		251947FB29ED39EB0000714B /* LocationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251947FA29ED39EB0000714B /* LocationsController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		251947E829ED38FE0000714B /* UIVIew+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIVIew+Extensions.swift"; sourceTree = "<group>"; };
 		251947EA29ED38FE0000714B /* UpdateableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateableView.swift; sourceTree = "<group>"; };
 		251947F229ED399C0000714B /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		251947FA29ED39EB0000714B /* LocationsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationsController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +234,7 @@
 		251947F129ED399C0000714B /* Locations */ = {
 			isa = PBXGroup;
 			children = (
+				251947FA29ED39EB0000714B /* LocationsController.swift */,
 				251947F229ED399C0000714B /* Location.swift */,
 			);
 			path = Locations;
@@ -376,6 +379,7 @@
 				251947EE29ED38FE0000714B /* UpdateableView.swift in Sources */,
 				251947F629ED399C0000714B /* Location.swift in Sources */,
 				251947EB29ED38FE0000714B /* TableViewCell.swift in Sources */,
+				251947FB29ED39EB0000714B /* LocationsController.swift in Sources */,
 				2519477629ED36150000714B /* AppDelegate.swift in Sources */,
 				251947DC29ED38A20000714B /* GETRequest.swift in Sources */,
 				2519477829ED36150000714B /* SceneDelegate.swift in Sources */,
