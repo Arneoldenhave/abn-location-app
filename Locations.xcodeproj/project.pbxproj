@@ -28,6 +28,7 @@
 		251947FE29ED3A1B0000714B /* LocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251947FC29ED3A1B0000714B /* LocationsViewController.swift */; };
 		251947FF29ED3A1B0000714B /* LocationsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251947FD29ED3A1B0000714B /* LocationsListView.swift */; };
 		2519480129ED3BDF0000714B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2519480029ED3BDF0000714B /* SceneDelegate.swift */; };
+		2519480629ED6EA40000714B /* Collection+extenions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2519480529ED6EA40000714B /* Collection+extenions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		251947FC29ED3A1B0000714B /* LocationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationsViewController.swift; sourceTree = "<group>"; };
 		251947FD29ED3A1B0000714B /* LocationsListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationsListView.swift; sourceTree = "<group>"; };
 		2519480029ED3BDF0000714B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		2519480529ED6EA40000714B /* Collection+extenions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+extenions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,7 @@
 		251947A529ED372F0000714B /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				2519480429ED6E8E0000714B /* Extensions */,
 				251947E329ED38FE0000714B /* UIComponents */,
 				251947CA29ED38A20000714B /* API */,
 			);
@@ -241,6 +244,14 @@
 				251947F229ED399C0000714B /* Location.swift */,
 			);
 			path = Locations;
+			sourceTree = "<group>";
+		};
+		2519480429ED6E8E0000714B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2519480529ED6EA40000714B /* Collection+extenions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -383,6 +394,7 @@
 				251947EE29ED38FE0000714B /* UpdateableView.swift in Sources */,
 				251947F629ED399C0000714B /* Location.swift in Sources */,
 				251947EB29ED38FE0000714B /* TableViewCell.swift in Sources */,
+				2519480629ED6EA40000714B /* Collection+extenions.swift in Sources */,
 				251947FB29ED39EB0000714B /* LocationsController.swift in Sources */,
 				2519477629ED36150000714B /* AppDelegate.swift in Sources */,
 				251947DC29ED38A20000714B /* GETRequest.swift in Sources */,
