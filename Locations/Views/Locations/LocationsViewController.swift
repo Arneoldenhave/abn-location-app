@@ -13,7 +13,6 @@ public final class LocationViewController: UITableViewController {
     private static let cellIdentifier = "locationViewController.cellIdentifier"
     private typealias CellType = UIComponents.TableViewCell<LocationsListView>
     private let pullToRefreshView = UIComponents.PullToRefreshView()
-
     
     private var locations : [Location] = [] {
         didSet {
@@ -30,6 +29,16 @@ public final class LocationViewController: UITableViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+}
+
+// MARK: LifeCycle
+extension LocationViewController {
+    
+    override public func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        pullToRefreshView.isHidden = !self.locations.isEmpty
+    }
+    
     override public func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
@@ -40,14 +49,7 @@ public final class LocationViewController: UITableViewController {
     }
 }
 
-extension LocationViewController {
-    
-    override public func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        pullToRefreshView.isHidden = !self.locations.isEmpty
-    }
-}
-
+// MARK: Setup
 extension LocationViewController {
     
     func setup() {
@@ -69,6 +71,7 @@ extension LocationViewController {
     }
 }
 
+// MARK: Data
 extension LocationViewController {
     
     @objc
@@ -90,7 +93,7 @@ extension LocationViewController {
     }
 }
 
-// UITableViewDelegate
+// MARK: UITableViewDelegate
 extension LocationViewController {
     
     public override func numberOfSections(in tableView: UITableView) -> Int {
@@ -123,7 +126,7 @@ extension LocationViewController {
 }
 
 
-// UITableViewDatasource
+// MARK: UITableViewDatasource
 extension LocationViewController {
         
     public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
