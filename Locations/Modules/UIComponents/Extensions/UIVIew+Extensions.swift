@@ -13,6 +13,7 @@ public extension UIView {
     @discardableResult
         public func centerIn(_ view: UIView, insets: UIEdgeInsets = .zero) -> [NSLayoutConstraint] {
         self.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(view)
         let constraints : [NSLayoutConstraint] = [
             self.topAnchor.constraint(equalTo: view.topAnchor, constant: insets.top),
             self.leadingAnchor.constraint(equalTo: view.leadingAnchor,  constant: insets.left),
