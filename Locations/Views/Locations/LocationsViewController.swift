@@ -12,6 +12,9 @@ public final class LocationViewController: UITableViewController {
     private let controller : LocationsController
     private static let cellIdentifier = "locationViewController.cellIdentifier"
     private typealias CellType = UIComponents.TableViewCell<LocationsListView>
+    private let pullToRefreshView = UIComponents.PullToRefreshView()
+
+    
     private var locations : [Location] = [] {
         didSet {
             self.tableView.reloadData()
@@ -39,6 +42,14 @@ public final class LocationViewController: UITableViewController {
 
 extension LocationViewController {
     
+    override public func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        pullToRefreshView.isHidden = !self.locations.isEmpty
+    }
+}
+
+extension LocationViewController {
+    
     func setup() {
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -46,7 +57,17 @@ extension LocationViewController {
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(fetchData), for: .valueChanged)
         tableView.refreshControl = refreshControl
-        //fetchData()
+
+    
+        self.view.insertSubview(pullToRefreshView, at: 0)
+        pullToRefreshView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            pullToRefreshView.topAnchor.constraint(equalTo: self.view.topAnchor),
+            pullToRefreshView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            pullToRefreshView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            pullToRefreshView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+        ])
+      //  fetchData()
     }
 }
 
