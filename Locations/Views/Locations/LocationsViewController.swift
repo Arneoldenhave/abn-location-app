@@ -40,7 +40,6 @@ public final class LocationViewController: UITableViewController {
 extension LocationViewController {
     
     func setup() {
-        self.tableView.backgroundColor = .red
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.register(CellType.self, forCellReuseIdentifier: Self.cellIdentifier)
@@ -66,6 +65,25 @@ extension LocationViewController {
     
     public override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return locations.count
+    }
+    
+    public override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let location = self.locations[safe: indexPath.item] else {
+            assertionFailure("locations array(\(locations.count)) selection index(\(indexPath.item) out of bounds ")
+            return
+        }
+
+        let coordinates = location.location.coordinate
+        let urlString = "wikipedia://places?lat=\(coordinates.latitude)&long=\(coordinates.longitude)"
+        guard let deepLinkURL = URL(string: urlString) else {
+            assertionFailure("Could not form url from string: \(urlString)")
+            return
+        }
+        guard UIApplication.shared.canOpenURL(deepLinkURL) else {
+            assertionFailure("Cannot open url: \(deepLinkURL)")
+            return
+        }
+        UIApplication.shared.open(deepLinkURL, options: [:], completionHandler: nil)
     }
 }
 

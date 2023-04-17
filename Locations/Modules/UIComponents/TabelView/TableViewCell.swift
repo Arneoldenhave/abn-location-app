@@ -13,10 +13,7 @@ extension UIComponents {
         
         public let view: View
     
-        let  l = UILabel()
-        
-        
-         override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
              self.view = View()
              super.init(style: style, reuseIdentifier: reuseIdentifier)
              contentView.wrap(view)

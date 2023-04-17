@@ -25,8 +25,8 @@ public final class LocationsListView: UIView {
 extension LocationsListView {
     
     func commonInit() {
-        self.wrap(stackView)
-        self.backgroundColor = .blue
+        let inset: CGFloat = 10
+        self.wrap(stackView, insets: .init(top: inset, left: inset, bottom: inset, right: inset))
         stackView.axis = .horizontal
         stackView.addArrangedSubview(label)
     }
