@@ -11,11 +11,23 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
-
+    var window: UIWindow?
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        // Create a window and set its root view controller
+        window = UIWindow(frame: UIScreen.main.bounds)
+        let viewController = ViewController()
+        window?.rootViewController = viewController
+        window?.makeKeyAndVisible()
+        // Customize app appearance (optional)
+        UINavigationBar.appearance().tintColor = .white
+        UINavigationBar.appearance().barTintColor = .blue
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        
         return true
     }
+
 
     // MARK: UISceneSession Lifecycle
 
@@ -33,4 +45,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
-
