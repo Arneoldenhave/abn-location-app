@@ -43,16 +43,29 @@ extension LocationViewController {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.register(CellType.self, forCellReuseIdentifier: Self.cellIdentifier)
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(fetchData), for: .valueChanged)
+        tableView.refreshControl = refreshControl
+        //fetchData()
+    }
+}
+
+extension LocationViewController {
+    
+    @objc
+    func fetchData() {
         Task {
             do {
                 let locations = try await self.controller.getLocations()
                 DispatchQueue.main.async {
-                  self.locations = locations
+                    self.tableView.refreshControl?.endRefreshing()
+                    self.locations = locations
                 }
             } catch(_) {
                 // @TODO: handle error, retry mechanism?
                 let alert = UIAlertController(title: "Something went wrong", message: "Please try again later", preferredStyle: .alert)
                 alert.addAction(.init(title: "Ok", style: .cancel))
+                tableView.refreshControl?.endRefreshing()
             }
         }
     }
