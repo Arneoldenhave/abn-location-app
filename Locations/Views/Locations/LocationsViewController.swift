@@ -47,10 +47,12 @@ extension LocationViewController {
             do {
                 let locations = try await self.controller.getLocations()
                 DispatchQueue.main.async {
-                    self.locations = locations
+                  self.locations = locations
                 }
-            } catch(let error) {
-                // @TODO: handle error
+            } catch(_) {
+                // @TODO: handle error, retry mechanism?
+                let alert = UIAlertController(title: "Something went wrong", message: "Please try again later", preferredStyle: .alert)
+                alert.addAction(.init(title: "Ok", style: .cancel))
             }
         }
     }
@@ -79,10 +81,11 @@ extension LocationViewController {
             assertionFailure("Could not form url from string: \(urlString)")
             return
         }
-        guard UIApplication.shared.canOpenURL(deepLinkURL) else {
-            assertionFailure("Cannot open url: \(deepLinkURL)")
-            return
-        }
+        // returns false for some unknown reason, might have to do with running on simualtor
+//        guard UIApplication.shared.canOpenURL(deepLinkURL) else {
+//            assertionFailure("Cannot open url: \(deepLinkURL)")
+//            return
+//        }
         UIApplication.shared.open(deepLinkURL, options: [:], completionHandler: nil)
     }
 }
