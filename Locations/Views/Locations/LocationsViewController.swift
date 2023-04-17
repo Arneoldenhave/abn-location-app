@@ -57,8 +57,6 @@ extension LocationViewController {
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(fetchData), for: .valueChanged)
         tableView.refreshControl = refreshControl
-
-    
         self.view.insertSubview(pullToRefreshView, at: 0)
         pullToRefreshView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -67,7 +65,7 @@ extension LocationViewController {
             pullToRefreshView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             pullToRefreshView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
         ])
-      //  fetchData()
+        fetchData()
     }
 }
 
