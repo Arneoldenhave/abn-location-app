@@ -11,17 +11,20 @@ import UIKit
 public extension UIView {
     
     @discardableResult
-    func wrap(_ view: UIView,  insets: UIEdgeInsets = .zero) -> [NSLayoutConstraint] {
+    func wrap(_ view: UIView,  insets: UIEdgeInsets = .zero, postion: Int? = nil) -> [NSLayoutConstraint] {
         view.translatesAutoresizingMaskIntoConstraints = false
-        self.addSubview(view)
+        if let postion {
+            self.insertSubview(view, at: postion)
+        } else {
+            self.addSubview(view)
+        }
         let constraints : [NSLayoutConstraint] = [
             view.topAnchor.constraint(equalTo: self.topAnchor, constant: insets.top),
             view.leadingAnchor.constraint(equalTo: self.leadingAnchor,  constant: insets.left),
-            view.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -insets.bottom),
-            view.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -insets.right)
+            view.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: insets.bottom),
+            view.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: insets.right)
         ]
         NSLayoutConstraint.activate(constraints)
         return constraints
-        
     }
 }

@@ -12,6 +12,8 @@ public final class LocationViewController: UITableViewController {
     private let controller : LocationsController
     private static let cellIdentifier = "locationViewController.cellIdentifier"
     private typealias CellType = UIComponents.TableViewCell<LocationsListView>
+    private let pullToRefreshView = UIComponents.PullToRefreshView()
+    
     private var locations : [Location] = [] {
         didSet {
             self.tableView.reloadData()
@@ -27,6 +29,16 @@ public final class LocationViewController: UITableViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+}
+
+// MARK: LifeCycle
+extension LocationViewController {
+    
+    override public func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        pullToRefreshView.isHidden = !self.locations.isEmpty
+    }
+    
     override public func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
@@ -37,28 +49,51 @@ public final class LocationViewController: UITableViewController {
     }
 }
 
+// MARK: Setup
 extension LocationViewController {
     
     func setup() {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.register(CellType.self, forCellReuseIdentifier: Self.cellIdentifier)
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(fetchData), for: .valueChanged)
+        tableView.refreshControl = refreshControl
+        self.view.insertSubview(pullToRefreshView, at: 0)
+        pullToRefreshView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            pullToRefreshView.topAnchor.constraint(equalTo: self.view.topAnchor),
+            pullToRefreshView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            pullToRefreshView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            pullToRefreshView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+        ])
+        fetchData()
+    }
+}
+
+// MARK: Data
+extension LocationViewController {
+    
+    @objc
+    func fetchData() {
         Task {
             do {
                 let locations = try await self.controller.getLocations()
                 DispatchQueue.main.async {
-                  self.locations = locations
+                    self.tableView.refreshControl?.endRefreshing()
+                    self.locations = locations
                 }
             } catch(_) {
                 // @TODO: handle error, retry mechanism?
                 let alert = UIAlertController(title: "Something went wrong", message: "Please try again later", preferredStyle: .alert)
                 alert.addAction(.init(title: "Ok", style: .cancel))
+                tableView.refreshControl?.endRefreshing()
             }
         }
     }
 }
 
-// UITableViewDelegate
+// MARK: UITableViewDelegate
 extension LocationViewController {
     
     public override func numberOfSections(in tableView: UITableView) -> Int {
@@ -81,7 +116,7 @@ extension LocationViewController {
             assertionFailure("Could not form url from string: \(urlString)")
             return
         }
-        // returns false for some unknown reason, might have to do with running on simualtor
+        // returns false for some unknown reason, might have to do with running on simulator
 //        guard UIApplication.shared.canOpenURL(deepLinkURL) else {
 //            assertionFailure("Cannot open url: \(deepLinkURL)")
 //            return
@@ -91,7 +126,7 @@ extension LocationViewController {
 }
 
 
-// UITableViewDatasource
+// MARK: UITableViewDatasource
 extension LocationViewController {
         
     public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -105,11 +140,4 @@ extension LocationViewController {
         cell.view.updateUI(with: .init(from: location))
         return cell
     }                                                                                                                                               
-}
-
-extension Collection {
-    /// Returns the element at the specified index if it is within bounds, otherwise nil.
-    subscript (safe index: Index) -> Element? {
-        return indices.contains(index) ? self[index] : nil
-    }
 }

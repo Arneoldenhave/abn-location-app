@@ -25,8 +25,7 @@ public final class LocationsListView: UIView {
 extension LocationsListView {
     
     func commonInit() {
-        let inset: CGFloat = 10
-        self.wrap(stackView, insets: .init(top: inset, left: inset, bottom: inset, right: inset))
+        self.wrap(stackView, insets: .equal(10))
         stackView.axis = .horizontal
         stackView.addArrangedSubview(label)
     }
@@ -45,5 +44,4 @@ extension LocationsListView: UpdateableView {
             self.locationName = location.name
         }
     }
-    
 }
